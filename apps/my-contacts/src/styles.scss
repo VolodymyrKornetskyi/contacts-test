@@ -1,1 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+}
+
+.add-edit-contact {
+  &.p-dialog {
+    max-height: 100vh;
+  }
+
+  .p-dialog-content {
+    padding: 0;
+    border-radius: 6px;
+    background-color: rgb(252, 252, 252);
+
+    width: 100vw;
+    height: 100vh;
+
+    @media screen and (min-width: 1201px) {
+      width: 1000px;
+      height: 90vh;
+    }
+
+    .__positions-dropdown {
+      height: 40px;
+      width: 100%;
+      .p-dropdown-label {
+        display: flex;
+        align-items: center;
+        padding-left: 0.875rem;
+      }
+    }
+  }
+}

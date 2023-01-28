@@ -1,0 +1,57 @@
+<p-table [value]="contacts">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Name</th>
+      <th>Position</th>
+      <th>City</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Phone 2</th>
+      <th></th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-contact>
+    <tr>
+      <td>
+        <div class="flex flex-row align-items-center justify-content-start">
+          <div class="__contact-avatar">
+            <img
+              class="__contact-avatar-image"
+              alt="Avatar can't be loaded"
+              [src]="contact.avatar"
+            />
+            <span
+              *ngIf="contact.isFavorite"
+              class="__contact-avatar-favorite pi pi-heart-fill"
+            ></span>
+          </div>
+          <div class="font-bold ml-2">
+            {{contact.name}} {{contact.secondName}}
+          </div>
+        </div>
+      </td>
+      <td>{{contact.position}}</td>
+      <td>{{contact.city}}</td>
+      <td>
+        <a href="mailto:{{contact.email}}">{{contact.email}}</a>
+      </td>
+      <td>
+        <ng-container *ngIf="contact.mainPhone; else noPhone">
+          <a href="tel:{{buildPhone(contact.mainPhone)}}">{{buildPhoneNumberView(contact.mainPhone)}}</a>
+        </ng-container>
+        <ng-template #noPhone>
+          ---
+        </ng-template>
+      </td>
+      <td>{{contact.additionalPhones?.length ? (contact.additionalPhones.length) : '---'}}</td>
+      <td>
+        <span
+          class="cursor-pointer pi pi-ellipsis-v ml-auto flex align-items-center justify-content-center __menu"
+          (click)="selectContact(contact) && menu.toggle($event)"
+        ></span>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
+
+<p-menu #menu [model]="items" [popup]="true"></p-menu>

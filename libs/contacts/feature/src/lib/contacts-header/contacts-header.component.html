@@ -1,0 +1,51 @@
+<div
+  class="flex md:flex-row flex-wrap flex-column align-items-stretch md:align-items-center justify-content-between"
+  [formGroup]="form"
+>
+  <p-selectButton
+    class="my-2 __choose-type"
+    [options]="showTypeOptions"
+    optionLabel="name"
+    optionValue="code"
+    formControlName="showType"
+  ></p-selectButton>
+
+  <div>
+    <p-multiSelect
+      class="my-2"
+      styleClass="mr-2"
+      [showHeader]="false"
+      [options]="cities"
+      [maxSelectedLabels]="1"
+      [selectedItemsLabel]="'{0} items selected'"
+      formControlName="city"
+      optionLabel="name"
+      optionValue="code"
+      defaultLabel="City"
+    ></p-multiSelect>
+    <p-multiSelect
+      [showHeader]="false"
+      [options]="positions"
+      [maxSelectedLabels]="1"
+      [selectedItemsLabel]="'{0} items selected'"
+      formControlName="position"
+      optionLabel="name"
+      optionValue="code"
+      defaultLabel="Position"
+    ></p-multiSelect>
+  </div>
+
+  <div class="my-2">
+    <span class="p-input-icon-left mr-2">
+      <i class="pi pi-search"></i>
+      <input
+        class="w-full"
+        type="text"
+        pInputText
+        formControlName="search"
+        placeholder="Search..."
+      />
+    </span>
+    <p-button label="Contact" icon="pi pi-plus" (onClick)="createContact()"></p-button>
+  </div>
+</div>

@@ -14,7 +14,14 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@my-contacts/contacts/data-access": [
+        "libs/contacts/data-access/src/index.ts"
+      ],
+      "@my-contacts/contacts/domain": ["libs/contacts/domain/src/index.ts"],
+      "@my-contacts/contacts/feature": ["libs/contacts/feature/src/index.ts"],
+      "@my-contacts/contacts/shell": ["libs/contacts/shell/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

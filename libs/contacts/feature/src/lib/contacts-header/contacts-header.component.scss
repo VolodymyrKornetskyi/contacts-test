@@ -1,0 +1,9 @@
+:host {
+  .__choose-type {
+    min-width: 226px;
+  }
+  ::ng-deep .p-multiselect {
+    max-width: 150px;
+    min-width: 150px;
+  }
+}

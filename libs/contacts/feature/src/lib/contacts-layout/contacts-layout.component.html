@@ -1,0 +1,12 @@
+<ng-container *ngIf="contactsToShow$ | async as contactsToShow; else dataLoading">
+  <ng-container *ngIf="cities$ | async as cities; else dataLoading">
+    <contacts-header
+      [cities]="cities"
+      (changeOptions)="changeOptions($event)"
+    ></contacts-header>
+  </ng-container>
+  <contacts-list [contacts]="contactsToShow"></contacts-list>
+</ng-container>
+<ng-template #dataLoading>
+  <p-progressSpinner></p-progressSpinner>
+</ng-template>

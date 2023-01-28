@@ -1,7 +1,7 @@
 /* eslint-disable */
 export default {
-  displayName: 'my-contacts',
-  preset: '../../jest.preset.js',
+  displayName: 'contacts-feature',
+  preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
@@ -9,7 +9,7 @@ export default {
       stringifyContentPathRegex: '\\.(html|svg)$',
     },
   },
-  coverageDirectory: '../../coverage/apps/my-contacts',
+  coverageDirectory: '../../../coverage/libs/contacts/feature',
   transform: {
     '^.+\\.(ts|mjs|js|html)$': 'jest-preset-angular',
   },
