@@ -19,3 +19,14 @@ Run `npx nx connect-to-nx-cloud` to enable [remote caching](https://nx.app) and 
 ## Further help
 
 Visit the [Nx Documentation](https://nx.dev) to learn more.
+
+# Run project
+
+Simple contacts app.
+
+`npm run start` and go to `localhost:4200` in browser
+
+### Check test status && coverage
+
+`npm run test:all` and go to coverage app and open needed index.html.
+
